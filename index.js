@@ -22,6 +22,16 @@
   current working directory down, excluding a few directories along the way
   (node_modules, test).
 
+  ## Why SourceCat?
+
+  Because I like using [emu](https://github.com/puffnfresh/emu.js) for
+  generating my documentation, and using `sourcecat` I can put things in a
+  mostly sensible order:
+
+  ```
+  sourcecat | emu > README.md
+  ```
+
   ## Special Cases
 
   In the following cases, the behaviour of the `sourcecat` command changes:
