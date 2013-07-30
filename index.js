@@ -37,6 +37,7 @@ var fs = require('fs');
 var async = require('async');
 var glob = require('glob');
 var reFiltered = /^(node_modules|test)\//i;
+var reIndex = /index\.js$/;
 
 /**
   ### sourcecat.generate(pattern, callback)

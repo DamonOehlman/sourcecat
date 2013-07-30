@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Concatenate the source files of a project",
   "main": "index.js",
+  "bin": {
+    "sourcecat": "./bin/sourcecat"
+  },
   "scripts": {
     "test": "node test/all.js"
   },
@@ -15,5 +18,9 @@
     "concat"
   ],
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "async": "~0.2.9",
+    "glob": "~3.2.6"
+  }
 }
