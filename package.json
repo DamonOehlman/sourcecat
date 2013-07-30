@@ -7,7 +7,8 @@
     "sourcecat": "./bin/sourcecat"
   },
   "scripts": {
-    "test": "node test/all.js"
+    "test": "node test/all.js",
+    "gendocs": "./bin/sourcecat | $(npm bin)/emu > README.md"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "dependencies": {
     "async": "~0.2.9",
     "glob": "~3.2.6"
+  },
+  "devDependencies": {
+    "emu": "0.0.2"
   }
 }
