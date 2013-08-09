@@ -75,7 +75,7 @@ exports.generate = function(pattern, opts, callback) {
     });
 
     // sort the files
-    files = files.sort(sortByFileDepthAndName);
+    files = files.sort(opts.sort || sortByFileDepthAndName);
 
     // read each of the files
     async.map(files, fs.readFile, function(err, results) {
