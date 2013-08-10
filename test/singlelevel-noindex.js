@@ -1,4 +1,4 @@
-var sourcecat = require('../../');
+var sourcecat = require('../');
 var path = require('path');
 var testName = path.basename(__filename, '.js');
 var testPath = path.resolve(__dirname, testName);
