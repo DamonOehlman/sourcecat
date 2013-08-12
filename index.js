@@ -46,7 +46,7 @@
 var fs = require('fs');
 var async = require('async');
 var glob = require('glob');
-var reFiltered = /^(node_modules|test|examples)\//i;
+var reFiltered = /^(node_modules|test|examples|dist)\//i;
 var reIndex = /index\.js$/;
 
 /**
