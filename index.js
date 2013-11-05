@@ -49,9 +49,8 @@
   You can import a file in the sourcecat tree at a custom location by using
   an `@import` line, e.g:
 
-  An example of this can be found here:
-
-  https://bitbucket.org/DamonOehlman/sourcecat/src/master/test/fixtures/custom-order/index.js?at=master#cl-6
+  An example of this can be found in the
+  [tests](https://bitbucket.org/DamonOehlman/sourcecat/src/master/test/fixtures/custom-order/index.js?at=master#cl-6).
 
   ## Reference
 
