@@ -48,8 +48,11 @@ var fs = require('fs');
 var path = require('path');
 var async = require('async');
 var glob = require('glob');
+
+// regexes
 var reFiltered = /^(node_modules|test|examples|dist)\//i;
 var reIndex = /index\.js$/;
+var reImport = /^(?:.*)\@import\s+([\w\/]+)(\.js)?(.*)$/;
 
 /**
   ### sourcecat.combine(files, callback)
@@ -59,12 +62,48 @@ var reIndex = /index\.js$/;
 
 **/
 exports.combine = function(files, callback) {
-  var output = files.map(function(file) {
-    var content = file.content.toString('utf8') + '\n';
+  var importedFiles = {};
 
-    console.log(content);
+  function importFile(filename) {
+    var content = '';
+
+    // find the required file
+    var targetFile = files.filter(function(data) {
+      return data.filename === filename;
+    })[0];
+
+    // if we have the target file, then mark as imported
+    if (targetFile) {
+      importedFiles[filename] = true;
+      content = process(targetFile.content.toString('utf8'));
+    }
 
     return content;
+  }
+
+  function process(content) {
+    // look for import lines
+    var lines = content.split('\n').map(function(line) {
+      var match = reImport.exec(line);
+
+      // if not a match, then return the line as is
+      if (! match) {
+        return line;
+      }
+
+      return importFile(match[1] + '.js');
+    });
+
+    return lines.join('\n');
+  }
+
+  var output = files.map(function(file) {
+    // if the file is importer already, then return an empty string
+    if (importedFiles[file.filename]) {
+      return '';
+    }
+
+    return process(file.content.toString('utf8') + '\n');
   }).join('');
 
   callback(null, output);
@@ -79,11 +118,16 @@ exports.combine = function(files, callback) {
 
 **/
 exports.load = function(pattern, opts, callback) {
+  var cwd;
+
   // handle no specific callback
   if (typeof opts == 'function') {
     callback = opts;
     opts = {};
   }
+
+  // determine the cwd
+  cwd = (opts || {}).cwd || process.cwd();
 
   // glob it up
   glob(pattern || '**/*.js', opts, function(err, files) {
@@ -101,14 +145,14 @@ exports.load = function(pattern, opts, callback) {
 
     // resolve the path names against the current working directory
     files = files.map(function(filename) {
-      return path.resolve((opts || {}).cwd || process.cwd(), filename);
+      return path.resolve(cwd, filename);
     });
 
     // read each of the files
     async.map(files, fs.readFile, function(err, results) {
       callback(err, (results || []).map(function(content, index) {
         return {
-          filename: files[index],
+          filename: path.relative(cwd, files[index]),
           content: content
         };
       }));
