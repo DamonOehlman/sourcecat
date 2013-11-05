@@ -15,12 +15,6 @@ first through the folder structure.
 (https://drone.io/bitbucket.org/DamonOehlman/sourcecat/status.png)
 ](https://drone.io/bitbucket.org/DamonOehlman/sourcecat/latest)
 
-## Installation
-
-```
-npm install sourcecat -g
-```
-
 ## Usage
 
 Specify the glob pattern as the first arg, that's all you can do. If none is
