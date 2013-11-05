@@ -9,6 +9,16 @@
   the exception of `index.js` trumping other files in a folder) breadth
   first through the folder structure.
 
+  [
+  ![NPM]
+  (https://nodei.co/npm/sourcecat.png)
+  ](https://nodei.co/npm/sourcecat/)
+
+  [
+  ![Build Status]
+  (https://drone.io/bitbucket.org/DamonOehlman/sourcecat/status.png)
+  ](https://drone.io/bitbucket.org/DamonOehlman/sourcecat/latest)
+
   ## Installation
 
   ```
@@ -39,6 +49,15 @@
   - a `src/` folder is detected in the current working directory.  In this
     case, the top-level directory is skipped and only the `src/` directory
     is traversed.
+
+  ## Tips and Tricks
+
+  You can import a file in the sourcecat tree at a custom location by using
+  an `@import` line, e.g:
+
+  An example of this can be found here:
+
+  https://bitbucket.org/DamonOehlman/sourcecat/src/master/test/fixtures/custom-order/index.js?at=master#cl-6
 
   ## Reference
 
