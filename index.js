@@ -60,7 +60,11 @@ var reIndex = /index\.js$/;
 **/
 exports.combine = function(files, callback) {
   var output = files.map(function(file) {
-    return file.content.toString('utf8') + '\n'
+    var content = file.content.toString('utf8') + '\n';
+
+    console.log(content);
+
+    return content;
   }).join('');
 
   callback(null, output);
