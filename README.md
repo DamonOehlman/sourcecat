@@ -5,7 +5,7 @@ of logical fashion.  Files are concatenated in alphabetical order (with
 the exception of `index.js` trumping other files in a folder) breadth
 first through the folder structure.
 
-## Installation 
+## Installation
 
 ```
 npm install sourcecat -g
@@ -38,7 +38,12 @@ In the following cases, the behaviour of the `sourcecat` command changes:
 
 ## Reference
 
-### sourcecat.generate(pattern, callback)
+### sourcecat.combine(files, callback)
+
+Combine the input files (as read from the `sourcecat.load` function) into
+a single output file.
+
+### sourcecat.load(pattern, callback)
 
 From the current working directory, load the files matching the specified
 pattern and send the resulting data to the callback as an array of data

@@ -9,7 +9,7 @@
   the exception of `index.js` trumping other files in a folder) breadth
   first through the folder structure.
 
-  ## Installation 
+  ## Installation
 
   ```
   npm install sourcecat -g
@@ -41,6 +41,7 @@
     is traversed.
 
   ## Reference
+
 **/
 
 var fs = require('fs');
@@ -50,13 +51,29 @@ var reFiltered = /^(node_modules|test|examples|dist)\//i;
 var reIndex = /index\.js$/;
 
 /**
-  ### sourcecat.generate(pattern, callback)
+  ### sourcecat.combine(files, callback)
+
+  Combine the input files (as read from the `sourcecat.load` function) into
+  a single output file.
+
+**/
+exports.combine = function(files, callback) {
+  var output = files.map(function(file) {
+    return file.content.toString('utf8')
+  }).join('');
+
+  callback(null, output);
+};
+
+/**
+  ### sourcecat.load(pattern, callback)
 
   From the current working directory, load the files matching the specified
   pattern and send the resulting data to the callback as an array of data
   objects (with a filename and content attribute).
+
 **/
-exports.generate = function(pattern, opts, callback) {
+exports.load = function(pattern, opts, callback) {
   // handle no specific callback
   if (typeof opts == 'function') {
     callback = opts;
