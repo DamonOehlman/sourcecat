@@ -45,6 +45,7 @@
 **/
 
 var fs = require('fs');
+var path = require('path');
 var async = require('async');
 var glob = require('glob');
 var reFiltered = /^(node_modules|test|examples|dist)\//i;
@@ -59,7 +60,7 @@ var reIndex = /index\.js$/;
 **/
 exports.combine = function(files, callback) {
   var output = files.map(function(file) {
-    return file.content.toString('utf8')
+    return file.content.toString('utf8') + '\n'
   }).join('');
 
   callback(null, output);
@@ -93,6 +94,11 @@ exports.load = function(pattern, opts, callback) {
 
     // sort the files
     files = files.sort(opts.sort || sortByFileDepthAndName);
+
+    // resolve the path names against the current working directory
+    files = files.map(function(filename) {
+      return path.resolve((opts || {}).cwd || process.cwd(), filename);
+    });
 
     // read each of the files
     async.map(files, fs.readFile, function(err, results) {

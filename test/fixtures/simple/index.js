@@ -1,0 +1,6 @@
+/**
+  # simple
+
+  Simple test loader for multiple files in a single directory.
+
+**/
