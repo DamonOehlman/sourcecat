@@ -3,4 +3,4 @@
 
   This is a file with a custom order
 **/
-/** @b **/
+/** @import b **/
