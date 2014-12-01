@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "emu": "0.0.2",
-    "tape": "~2.1.0"
+    "tape": "^3.0.3"
   }
 }
