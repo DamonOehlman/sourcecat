@@ -15,6 +15,11 @@ first through the folder structure.
 (https://drone.io/bitbucket.org/DamonOehlman/sourcecat/status.png)
 ](https://drone.io/bitbucket.org/DamonOehlman/sourcecat/latest)
 
+
+[![NPM](https://nodei.co/npm/sourcecat.png)](https://nodei.co/npm/sourcecat/)
+
+
+
 ## Usage
 
 Specify the glob pattern as the first arg, that's all you can do. If none is
@@ -60,3 +65,28 @@ a single output file.
 From the current working directory, load the files matching the specified
 pattern and send the resulting data to the callback as an array of data
 objects (with a filename and content attribute).
+
+## License(s)
+
+### MIT
+
+Copyright (c) 2014 Damon Oehlman <damon.oehlman@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
