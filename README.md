@@ -7,14 +7,14 @@ the exception of `index.js` trumping other files in a folder) breadth
 first through the folder structure.
 
 [
+![Build Status]
+(https://travis-ci.org/DamonOehlman/sourcecat.svg?branch=damon-upgrade-deps)
+](https://travis-ci.org/DamonOehlman/sourcecat)
+
+[
 ![NPM]
 (https://nodei.co/npm/sourcecat.png)
 ](https://nodei.co/npm/sourcecat/)
-
-[
-![Build Status]
-(https://drone.io/bitbucket.org/DamonOehlman/sourcecat/status.png)
-](https://drone.io/bitbucket.org/DamonOehlman/sourcecat/latest)
 
 ## Usage
 
