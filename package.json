@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node test/all.js",
-    "gendocs": "./bin/sourcecat | $(npm bin)/emu > README.md"
+    "gendocs": "./bin/sourcecat | $(npm bin)/emu > README.md && cat LICENSE.md >> README.md"
   },
   "repository": {
     "type": "git",

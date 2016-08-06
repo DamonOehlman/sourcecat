@@ -1,3 +1,4 @@
+
 # sourcecat
 
 A simple tool for concatenating source files in a repository in some kind
@@ -14,11 +15,6 @@ first through the folder structure.
 ![Build Status]
 (https://drone.io/bitbucket.org/DamonOehlman/sourcecat/status.png)
 ](https://drone.io/bitbucket.org/DamonOehlman/sourcecat/latest)
-
-
-[![NPM](https://nodei.co/npm/sourcecat.png)](https://nodei.co/npm/sourcecat/)
-
-
 
 ## Usage
 
@@ -65,12 +61,11 @@ a single output file.
 From the current working directory, load the files matching the specified
 pattern and send the resulting data to the callback as an array of data
 objects (with a filename and content attribute).
-
 ## License(s)
 
 ### MIT
 
-Copyright (c) 2014 Damon Oehlman <damon.oehlman@gmail.com>
+Copyright (c) 2014-2016 Damon Oehlman <damon.oehlman@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
