@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.0.1",
-    "glob": "^7.0.5"
+    "glob": "^9.0.0"
   },
   "devDependencies": {
     "emu": "^1.0.0",
